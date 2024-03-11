@@ -1,4 +1,4 @@
-1,To Kill a Mockingbird,Harper Lee
-2,Harry Potter,J.K. Rowling
-3,Warriors,Erin Hunter
-4,Percy Jackson & the Olympians,Rick Riordan
+1,To Kill a Mockingbird,Harper Lee,Thriller
+2,Harry Potter,J.K. Rowling,Fantasy
+3,Warriors,Erin Hunter,Fantasy
+4,Percy Jackson & the Olympians,Rick Riordan,Fantasy

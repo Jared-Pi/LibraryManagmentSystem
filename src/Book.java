@@ -7,11 +7,17 @@ public class Book {
     private int bookID;
     private String bookTitle;
     private String bookAuthor;
+    private String bookGenre;
+    private String bookStatus;
+    private String dueDate;
 
-    public Book(int id, String title, String author) {
+    public Book(int id, String title, String author, String bookGenre) {
         this.bookID = id;
         this.bookTitle = title;
         this.bookAuthor = author;
+        this.bookGenre = bookGenre;
+        this.bookStatus = "In";
+        this.dueDate = null;
     }
 
     public int getID() {
@@ -24,5 +30,25 @@ public class Book {
 
     public String getAuthor() {
         return bookAuthor;
+    }
+
+    public String getBookGenre() {
+        return bookGenre;
+    }
+
+    public String getBookStatus() {
+        return bookStatus;
+    }
+
+    public void setBookStatus(String bookStatus) {
+        this.bookStatus = bookStatus;
+    }
+
+    public String getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(String dueDate) {
+        this.dueDate = dueDate;
     }
 }

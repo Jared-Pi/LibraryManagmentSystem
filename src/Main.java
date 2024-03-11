@@ -8,15 +8,19 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Library library = new Library();
-        library.loadLibraryFromFile(library);
         Scanner scan = new Scanner(System.in);
         boolean contRun = true;
         System.out.println("Welcome to the Library Management System!");
+        System.out.println("Input file 'name.type' (default: 'books.txt'): ");
+        String fileName = scan.nextLine();
+        library.loadLibraryFromFile(library, fileName);
         System.out.println("""
                 List of Commands:
                     Add (add a new book to the library)
                     Remove (remove a book from the library)
                     List (list all books in the library)
+                    In (check in a book)
+                    Out (check out a book)
                     End (stops the program from running)
                     Save (Save current library to file)
                     Help (list of commands)""");
@@ -32,13 +36,54 @@ public class Main {
                     String scanTitle = scan.nextLine();
                     System.out.println("Input an Author:");
                     String scanAuthor = scan.nextLine();
-                    library.addBook(scanID, scanTitle, scanAuthor);
+                    System.out.println("Input a Genre:");
+                    String scanGenre = scan.nextLine();
+                    library.addBook(scanID, scanTitle, scanAuthor, scanGenre);
                 }
                 case "remove", "Remove" -> {
-                    System.out.println("Input the ID of the book you want to remove:");
-                    int scanID = scan.nextInt();
-                    scan.nextLine(); //consumes extra /n from scan.nextInt();
-                    library.removeBook(scanID);
+                    System.out.println("Type 'ID' to remove by ID or skip to remove by Title: ");
+                    String scanRemov = scan.nextLine();
+                    if (scanRemov.equals("id")||scanRemov.equals("ID")) {
+                        System.out.println("Input the ID of the book you want to remove:");
+                        int scanID = scan.nextInt();
+                        scan.nextLine(); //consumes extra /n from scan.nextInt();
+                        library.removeBook(scanID);
+                    }
+                    else {
+                        System.out.println("Input the Title of the book you want to remove:");
+                        String scanTitle = scan.nextLine();
+                        library.removeBook(scanTitle);
+                    }
+                }
+                case "in", "In" -> {
+                    System.out.println("Type 'ID' to Check In by ID or skip to Check In by Title: ");
+                    String scanIDT = scan.nextLine();
+                    if (scanIDT.equals("id")||scanIDT.equals("ID")) {
+                        System.out.println("Input the ID of the book you want to Check In:");
+                        int scanID = scan.nextInt();
+                        scan.nextLine(); //consumes extra /n from scan.nextInt();
+                        library.checkInBook(scanID);
+                    }
+                    else {
+                        System.out.println("Input the Title of the book you want to Check In:");
+                        String scanTitle = scan.nextLine();
+                        library.checkInBook(scanTitle);
+                    }
+                }
+                case "out", "Out" -> {
+                    System.out.println("Type 'ID' to Check Out by ID or skip to Check Out by Title: ");
+                    String scanIDT = scan.nextLine();
+                    if (scanIDT.equals("id")||scanIDT.equals("ID")) {
+                        System.out.println("Input the ID of the book you want to Check Out:");
+                        int scanID = scan.nextInt();
+                        scan.nextLine(); //consumes extra /n from scan.nextInt();
+                        library.checkOutBook(scanID);
+                    }
+                    else {
+                        System.out.println("Input the Title of the book you want to Check Out:");
+                        String scanTitle = scan.nextLine();
+                        library.checkOutBook(scanTitle);
+                    }
                 }
                 case "list", "List" -> library.listAllBooks();
                 case "save", "Save" -> library.saveBooks("src\\books.txt");
@@ -48,8 +93,10 @@ public class Main {
                             Add (add a new book to the library)
                             Remove (remove a book from the library)
                             List (list all books in the library)
+                            In (check in a book)
+                            Out (check out a book)
                             End (stops the program from running)
-                            Save (Save current library to file)
+                            Save (save current library to file)
                             Help (list of commands)""");
                 default -> System.out.println("Command '" + scanCommand + "' not recognized.");
             }
