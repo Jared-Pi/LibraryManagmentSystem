@@ -5,7 +5,7 @@ import java.util.Scanner;
  * Runs the program using constructors and getters from the Library and Book classes to prompt the user to either add, remove, or list
  *  The books in the library
  */
-public class Main {
+public class Main { //now depreciated, program runs main on "LibraryGUI.java"
     public static void main(String[] args) {
         Library library = new Library();
         Scanner scan = new Scanner(System.in);

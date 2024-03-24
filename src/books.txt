@@ -2,3 +2,6 @@
 2,Harry Potter,J.K. Rowling,Fantasy
 3,Warriors,Erin Hunter,Fantasy
 4,Percy Jackson & the Olympians,Rick Riordan,Fantasy
+5,Dune,Frank Herbert,Science Fiction
+6,Of Mice and Men,John Steinbeck,Tragedy
+7,Where the Wild Things Are,Maurice Sendak,Fantasy
