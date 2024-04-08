@@ -7,11 +7,11 @@ import java.awt.event.FocusEvent;
 import static java.lang.Integer.parseInt;
 
 /* Jared Pilewski, CEN-3024C, 03/24/24
- * LibraryGUI
+ * oldLibraryGUI
  * Runs the program and displays a GUI that can utilize all functions of the Library Management System
- *
+ * !!Now Depreciated for "dbLibraryGUI"!!
  */
-public class LibraryGUI extends JFrame {
+public class oldLibraryGUI extends JFrame {
     private JLabel formTitle;
     private JPanel MainPanel;
     private JButton buttImport;
@@ -27,7 +27,7 @@ public class LibraryGUI extends JFrame {
     private JTextField inputCheckIn;
     private JButton buttExit;
 
-    public LibraryGUI () {
+    public oldLibraryGUI() {
         Library library = new Library();
         ConsoleOutputCapturer capOut = new ConsoleOutputCapturer();
 
@@ -43,7 +43,7 @@ public class LibraryGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 capOut.start();
                 library.loadLibraryFromFile(library, inputImportFile.getText());
-                JOptionPane.showMessageDialog(LibraryGUI.this, capOut.stop());
+                JOptionPane.showMessageDialog(oldLibraryGUI.this, capOut.stop());
             }
         });
 
@@ -71,19 +71,19 @@ public class LibraryGUI extends JFrame {
                         tempRem = parseInt(inputRemove.getText());
                         capOut.start();
                         library.removeBook(tempRem);
-                        JOptionPane.showMessageDialog(LibraryGUI.this, capOut.stop());
+                        JOptionPane.showMessageDialog(oldLibraryGUI.this, capOut.stop());
                     }
 
                     catch (NumberFormatException err) {
                         tempRem = -1;
-                        JOptionPane.showMessageDialog(LibraryGUI.this,"Error, Input a number when removing by ID");
+                        JOptionPane.showMessageDialog(oldLibraryGUI.this,"Error, Input a number when removing by ID");
                     }
 
                 }
                 else {
                     capOut.start();
                     library.removeBook(inputRemove.getText());
-                    JOptionPane.showMessageDialog(LibraryGUI.this, capOut.stop());
+                    JOptionPane.showMessageDialog(oldLibraryGUI.this, capOut.stop());
                 }
 
             }
@@ -93,7 +93,7 @@ public class LibraryGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 capOut.start();
                 library.checkOutBook(inputCheckOut.getText());
-                JOptionPane.showMessageDialog(LibraryGUI.this, capOut.stop());
+                JOptionPane.showMessageDialog(oldLibraryGUI.this, capOut.stop());
             }
         });
         buttCheckIn.addActionListener(new ActionListener() {
@@ -101,7 +101,7 @@ public class LibraryGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 capOut.start();
                 library.checkInBook(inputCheckIn.getText());
-                JOptionPane.showMessageDialog(LibraryGUI.this, capOut.stop());
+                JOptionPane.showMessageDialog(oldLibraryGUI.this, capOut.stop());
             }
         });
         buttExit.addActionListener(new ActionListener() {
@@ -113,6 +113,6 @@ public class LibraryGUI extends JFrame {
     }
 
     public static void main(String[] args) {
-        new LibraryGUI();
+        new oldLibraryGUI();
     }
 }
