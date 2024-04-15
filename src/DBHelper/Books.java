@@ -12,7 +12,15 @@ public class Books extends DBHelper {
 	public static final String Status = "Status";
 	public static final String dueDate = "dueDate";
 
-	// Prepares the text of a SQL "select" command
+	/**
+	 * Prepares the text of a SQL "select" command
+	 * @param fields field that will be selected from the database
+	 * @param whatField field that will be checked for searching
+	 * @param whatValue condition to search by
+	 * @param sortField field that will be checked for sorting
+	 * @param sort condition to sort by
+	 * @return
+	 */
 	private String prepareSQL(String fields, String whatField, String whatValue, String sortField, String sort) {
 		String query = "SELECT ";
 		query += fields == null ? " * FROM " + TABLE_NAME : fields + " FROM " + TABLE_NAME;
@@ -21,7 +29,15 @@ public class Books extends DBHelper {
 		return query;
 	}
 
-	//insert a new record into the database
+	/**
+	 * insert a new record into the database, each param is a field in the database
+	 * @param bookID bookID field
+	 * @param Title Tittle field
+	 * @param Author Author field
+	 * @param Genre Genre field
+	 * @param Status Status field
+	 * @param dueDate dueDate field
+	 */
 	public void insert(Integer bookID, String Title, String Author, String Genre, String Status, String dueDate) {
 		Title = Title != null ? "\"" + Title + "\"" : null;
 		Author = Author != null ? "\"" + Author + "\"" : null;
@@ -45,10 +61,21 @@ public class Books extends DBHelper {
 		}
 	}
 
+	/**
+	 * delete a record from the database
+	 * @param whatField field that will be checked for searching
+	 * @param whatValue condition to search by
+	 */
 	public void delete(String whatField, String whatValue) {
 		super.execute("DELETE from " + TABLE_NAME + " where " + whatField + " = " + whatValue + ";");
 	}
 
+	/**
+	 * @param whatField field that will be checked for searching
+	 * @param whatValue condition to search by
+	 * @param whereField will update field to this
+	 * @param whereValue will update field value to this
+	 */
 	public void update(String whatField, String whatValue, String whereField, String whereValue) {
 		super.execute("UPDATE " + TABLE_NAME + " set " + whatField + " = \"" + whatValue + "\" where " + whereField + " = \"" + whereValue + "\";");
 	}

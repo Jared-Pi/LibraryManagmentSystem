@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"Book"},{"p":"DBHelper","l":"Books"},{"p":"<Unnamed>","l":"ConsoleOutputCapturer"},{"p":"DBHelper","l":"DBHelper"},{"p":"<Unnamed>","l":"dbLibraryGUI"},{"p":"<Unnamed>","l":"Library"},{"p":"<Unnamed>","l":"Main"},{"p":"<Unnamed>","l":"oldLibraryGUI"}];updateSearchResults();

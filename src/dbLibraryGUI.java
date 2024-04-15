@@ -24,7 +24,6 @@ public class dbLibraryGUI extends JFrame {
     private JButton buttCheckIn;
     private JTextField inputCheckInOut;
     private JButton buttExit;
-    private JComboBox combCheck;
 
     public dbLibraryGUI() {
         ConsoleOutputCapturer capOut = new ConsoleOutputCapturer();
@@ -147,7 +146,10 @@ public class dbLibraryGUI extends JFrame {
         new dbLibraryGUI();
     }
 
-    //Updates the list of books in the database
+    /**
+     * Updates the list of books in the database
+     * @param data array of books in database
+     */
     public static void printDatabase(ArrayList<ArrayList<Object>> data) {
         Books dbBooks = new Books();
         data = dbBooks.getExecuteResult("select * from Books;");

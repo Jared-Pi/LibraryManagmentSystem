@@ -14,7 +14,9 @@ public class ConsoleOutputCapturer {
     private PrintStream previous;
     private boolean capturing;
 
-    //reads console input
+    /**
+     * reads console input
+     */
     public void start() {
         if (capturing) {
             return;
@@ -31,7 +33,9 @@ public class ConsoleOutputCapturer {
         System.setOut(custom);
     }
 
-    //stops reading console input
+    /**
+     * stops reading console input
+     */
     public String stop() {
         if (!capturing) {
             return "";
