@@ -4,6 +4,11 @@
     <mappings />
     <preferences />
   </component>
+  <component name="DBNavigator.Project.DataEditorManager">
+    <record-view-column-sorting-type value="BY_INDEX" />
+    <value-preview-text-wrapping value="true" />
+    <value-preview-pinned value="false" />
+  </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
@@ -15,8 +20,14 @@
       <console name="lmsDatabase" type="STANDARD" schema="" session="Main" />
     </connection>
   </component>
+  <component name="DBNavigator.Project.DatabaseEditorStateManager">
+    <last-used-providers />
+  </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
+  </component>
+  <component name="DBNavigator.Project.DatabaseSessionManager">
+    <connection id="0fbfcae2-ff0a-4c6c-b236-bc6b0d48844b" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="0fbfcae2-ff0a-4c6c-b236-bc6b0d48844b" dataset="librarymanagementsystem.books" active-filter-id="" />

@@ -5,7 +5,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class DBHelper {
-	private final String DATABASE_NAME = "C:\\Users\\Jared\\Desktop\\School\\sqlite\\databases\\lmsDatabase.db";
+	private final String DATABASE_NAME = "src/database/lmsDatabase.db";
 	private Connection connection;
 	private Statement statement;
 	private ResultSet resultSet;
